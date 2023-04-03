@@ -58,7 +58,7 @@ export default function Book(props) {
     // TODO: use fetch to call DELETE /api/book
     const res = await fetch("/api/book", {
       method: "DELETE",
-      body: JSON.stringify({ id: <book id /> }),
+      body: JSON.stringify({ id: book.id }),
     });
     if (res.status === 200) {
       router.replace(router.asPath);
