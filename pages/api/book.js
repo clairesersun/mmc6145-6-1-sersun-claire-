@@ -33,7 +33,7 @@ export default withIronSessionApiRoute(
           return res.status(401).end()}
           try {
             const data = JSON.parse(req.body)
-            const deletedBook = await db.book.remove(data.book) 
+            const deletedBook = await db.book.remove(user.id, data.id) 
             if (!deletedBook) {
               req.session.destroy()
               return res.status(401).end()
