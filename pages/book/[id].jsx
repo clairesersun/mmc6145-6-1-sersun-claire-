@@ -47,7 +47,7 @@ export default function Book(props) {
     const res = await fetch("/api/book", {
       method: "POST",
       // Be sure to pass book in body (use JSON.stringify)
-      body: JSON.stringify({ book }),
+      body: JSON.stringify({ ...book }),
     });
     // Call router.replace(router.asPath) if you receive a 200 status
     if (res.status === 200) {

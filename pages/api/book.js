@@ -13,7 +13,7 @@ export default withIronSessionApiRoute(
           return res.status(401).end() }
           try {
             const data = JSON.parse(req.body) //data is an object {title, id, ect}
-            const addedBook = await db.book.add(user.id, data.book) 
+            const addedBook = await db.book.add(user.id, data) 
             //add function returns null if user is not found or book not added
             if (!addedBook) {
               //if adding book fails, log user out/delete cookie
